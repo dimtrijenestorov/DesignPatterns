@@ -1,0 +1,2 @@
+﻿
+Playground.Client.Main();
