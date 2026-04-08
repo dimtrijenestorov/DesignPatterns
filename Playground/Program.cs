@@ -1,19 +1,22 @@
-﻿
-// The other part of the client code constructs the actual chain.
-using DesignPatterns.ChainOfResponsibilities.Handlers;
-using Playground;
+﻿using DesignPatterns.Iterator.Models;
 
-var monkey = new MonkeyHandler();
-var squirrel = new SquirrelHandler();
-var dog = new DogHandler();
+var collection = new WordsCollection();
+collection.AddItem("First");
+collection.AddItem("Second");
+collection.AddItem("Third");
 
-monkey.SetNext(squirrel).SetNext(dog);
+Console.WriteLine("Straight traversal:");
 
-// The client should be able to send a request to any handler, not
-// just the first one in the chain.
-Console.WriteLine("Chain: Monkey > Squirrel > Dog\n");
-Client.ClientCode(monkey);
-Console.WriteLine();
+foreach (var element in collection)
+{
+    Console.WriteLine(element);
+}
 
-Console.WriteLine("Subchain: Squirrel > Dog\n");
-Client.ClientCode(squirrel);
+Console.WriteLine("\nReverse traversal:");
+
+collection.ReverseDirection();
+
+foreach (var element in collection)
+{
+    Console.WriteLine(element);
+}
