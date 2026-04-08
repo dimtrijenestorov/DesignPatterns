@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.ChainOfResponsibilities.Handlers
 {
-    internal class SquirrelHandler : AbstractHandler
+    public class SquirrelHandler : AbstractHandler
     {
         public override object Handle(object request)
         {

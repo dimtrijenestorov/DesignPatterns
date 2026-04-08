@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DesignPatterns.AbstractFactory;
+using DesignPatterns.ChainOfResponsibilities;
 
 namespace Playground
 {
@@ -34,6 +35,25 @@ namespace Playground
             engine.Print();
             fuel.Print();
             steering.Print();
+        }
+
+        public static void ClientCode(IHandler handler)
+        {
+            foreach (var food in new List<string> { "Nut", "Banana", "Cup of coffee" })
+            {
+                Console.WriteLine($"Client: Who wants a {food}?");
+
+                var result = handler.Handle(food);
+
+                if (result != null)
+                {
+                    Console.Write($"   {result}");
+                }
+                else
+                {
+                    Console.WriteLine($"   {food} was left untouched.");
+                }
+            }
         }
     }
 }

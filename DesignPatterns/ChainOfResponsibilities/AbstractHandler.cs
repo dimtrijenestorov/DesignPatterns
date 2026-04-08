@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.ChainOfResponsibilities
 {
-    internal class AbstractHandler : IHandler
+    public class AbstractHandler : IHandler
     {
         private IHandler _nextHandler;
 

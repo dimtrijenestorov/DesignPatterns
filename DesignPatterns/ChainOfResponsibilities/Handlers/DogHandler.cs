@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.ChainOfResponsibilities.Handlers
 {
-    internal class DogHandler : AbstractHandler
+    public class DogHandler : AbstractHandler
     {
         public override object Handle(object request)
         {

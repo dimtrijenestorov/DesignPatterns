@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DesignPatterns.ChainOfResponsibilities.Handlers
 {
-    internal class MonkeyHandler : AbstractHandler
+    public class MonkeyHandler : AbstractHandler
     {
         public override object Handle(object request)
         {
-            if ((request as string) == "banana")
+            if ((request as string) == "Banana")
             {
                 return $"Monkey: I'll eat the {request.ToString()}.\n";
             }
